@@ -16,7 +16,7 @@
      <table border="0" width="100%" cellspacing="0" cellpadding="0">
         <tr bgcolor="99aaee">
            <td align="center">
-              <img src="" alt="校训" width="600" heigh="100">
+              <img src="image/1.jpg" alt="校训" width="250" heigh="300">
              </td>
              <td colspan="1" align="left">
               <h2>个人信息管理系统</h2>
