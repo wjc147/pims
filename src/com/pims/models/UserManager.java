@@ -70,8 +70,29 @@ public class UserManager {
 	 * @param user
 	 */
 	public void update(User user){
+		conn = getConnection();
+		String sql="update pims set username=?,password=?,name=?,sex=?,phone=? where id=?";
+		try {
+			ps = conn.prepareStatement(sql);//预处理
+			
+			ps.setString(1, user.getUsername());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getName());
+			ps.setString(4, user.getSex());
+			ps.setString(5, user.getPhone());
+			
+			ps.executeUpdate();//执行
+			
+			ps.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
+
+	
 	
 	/**
 	 * 从Servlet传递User过来，从数据库查询账号密码是否相匹配。
@@ -87,9 +108,9 @@ public class UserManager {
 	 * @return 连接到的数据库资源
 	 */
 	public Connection getConnection(){
-		String driverName = "com.sql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/pims";
-		String user = "root";
+		String driverName = "com.microsoft.jdbc.sqlserver.SQLServerDriver";
+		String url = "jdbc:microsoft:sqlserver://localhost:1433/DatabaseName=pims";
+		String user = "sa";
 		String password = "";
 		
 		try {
