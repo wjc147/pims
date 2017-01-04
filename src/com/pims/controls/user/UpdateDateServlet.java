@@ -18,7 +18,7 @@ import fileManager.model.FileManager;
 import fileManager.model.UserFile;
 
 
-public class UploadServlet extends HttpServlet {
+public class UpdateDateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String UPLOAD_DIRECTORY = "upload";
@@ -27,7 +27,7 @@ public class UploadServlet extends HttpServlet {
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
     private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
-    public UploadServlet() {
+    public UpdateDateServlet() {
         super();
     }
 

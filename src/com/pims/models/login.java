@@ -1,4 +1,4 @@
-package userManager.control;
+package com.pims.models;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import userManager.model.User;
-import userManager.model.UserManager;
+import com.pims.models.User;
+import com.pims.models.UserManager;
 
 /**
  * Servlet implementation class login

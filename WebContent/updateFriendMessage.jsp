@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ page import="friendManager.LookFriendBean" %>
+<%@ page import="com.pims.models.LookFriendBean" %>
 <%@ page import="java.util.ArrayList" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,11 +38,11 @@
 	   response.sendRedirect("http://localhost:8084/PIMS/friendManage/lookFriend.jsp");
    }else{
 	   for (int i=friendslist2.size()-1;i>=0;i--){
-		   LookFriendBean ff=(LookFriendBean)friendlist.get(i);
+		   LookFriendBean ff=(LookFriendBean)friendslist2.get(i);
 		   %>
 		   <tr>
 		   <td height="30">用户姓名</td>
-		   <td><%=ff.geNamet() %></td>
+		   <td><%=ff.getName() %></td>
 		   </tr>
 		    <tr>
 		   <td height="30">用户电话</td>
@@ -52,14 +52,7 @@
 		   <td height="30">邮箱地址</td>
 		   <td><input type="text" name="email" value="<%=ff.getEmail() %>"></td>
 		   </tr>
-		    <tr>
-		   <td height="30">工作单位</td>
-		  <td><input type="text" name="worPlace" value="<%=ff.getWorPlace() %>"></td>
-		   </tr>
-		    <tr>
-		   <td height="30">家庭住址</td>
-		   <td><input type="text" name="place" value="<%=ff.getPlace() %>"></td>
-		   </tr>
+		    
 		    <tr>
 		   <td height="30">用户QQ</td>
 		  <td><input type="text" name="QQ" value="<%=ff.getQQ() %>"></td>
