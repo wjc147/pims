@@ -26,19 +26,25 @@
       }
   </style>
         <script type="text/javascript">
-        function isRegisterUserName(s)   
-        {   
-        var patrn=/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/;   
-        if (!patrn.exec(s)) return false 
-        return true 
-        } 
-
-        function isRegisterUserName(s)
-        {
-        var patrn=/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/;
-        if (!patrn.exec(s)) return false
-        return true
+        function checkUser(va){
+            if(va==""){
+                document.getElementById("user").innerHTML="用户名不能为空";
+                document.form1.sub.disabled=true;
+                }else{
+                    document.getElementById("user").innerHTML="";
+                    document.form1.sub.disabled=false;
+                    }           
         }
+    function checkpwd(va){
+        if(va==""){
+            document.getElementById("pwd").innerHTML="密码不能为空";
+            document.form1.sub.disabled=true;
+        }else{
+            document.getElementById("pwd").innerHTML="";
+            document.form1.sub.disabled=false;
+            }                       
+    }
+    
 
         
         </script>
@@ -51,12 +57,10 @@
             <div id="j">
                 <form id="bd" action="" method="post" >
                   
-                                                                             用户名:<input type="text" name="userName" size="16"/><br>
-                                 <p></p>
-                                                                              密     码:<input type="text" name="password" size="18"/>
-                      
+                  <p>用户名：<input type="text" name="user" onBlur="checkUser(this.value)" /><span id="user"></span></p>
+                   <p>密码：<input type="password" name="pwd" onBlur="checkpwd(this.value)" id="quepwd" /><span id="pwd"></span></p>
                          <br>
-                           &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp; <input type="submit" value="登录" size="12">
+                           &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="submit" value="登录" size="12">
                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
                             <input type="reset" value="清除" size="12">
                      <hr/>

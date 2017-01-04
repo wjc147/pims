@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.pims.models.FileManager;
-import com.pims.models.UserFile;
+import fileManager.model.FileManager;
+import fileManager.model.UserFile;
+
+
 
 /**
  * Servlet implementation class FindFile
@@ -25,9 +27,10 @@ public class FindFile extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FileManager manager = new FileManager();
 		List<UserFile> files =  manager.findAll();
+		
 		request.setAttribute("files",files);
         // Ìø×ªµ½ show.jsp
-        getServletContext().getRequestDispatcher("/file/show.jsp").forward(
+        getServletContext().getRequestDispatcher("/fileManager/ËÍ»¨ow.jsp").forward(
                 request, response);
 
 	}

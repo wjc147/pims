@@ -22,7 +22,7 @@ public class FileManager {
 
 	public void add(UserFile file){
 		
-		String sql = "insert into file (name, path) values(?,?)";
+		String sql = "insert into fileManager (name, path) values(?,?)";
 		conn = getConnection();
 		
 		try {
@@ -47,7 +47,7 @@ public class FileManager {
 		try {
 			stmt = conn.createStatement();
 			//执行查询
-			rs=stmt.executeQuery("select * from file");
+			rs=stmt.executeQuery("select * from fileManager");
 			
 			//声明一个列表变量files来放所有的文件
 			files = new ArrayList<UserFile>();
@@ -56,7 +56,7 @@ public class FileManager {
 				//每读一条数据就新生成一个UserFile
 				file = new UserFile();
 				//将每一条数据的值取出，放入刚才声明的files。
-				file.setId(rs.getInt("id"));
+				
 				file.setName(rs.getString("name"));
 				file.setPath(rs.getString("path"));
 				files.add(file);
@@ -81,10 +81,10 @@ public class FileManager {
 	 * @return 连接到的数据库资源
 	 */
 	public Connection getConnection(){
-		String driverName = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/pims";
-		String user = "root";
-		String password = "";
+		String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+		String url = "jdbc:sqlserver://localhost:1433;DatabaseName=pims";
+		String user = "sa";
+		String password = "1234";
 		
 		try {
 			Class.forName(driverName);

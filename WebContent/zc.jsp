@@ -77,7 +77,7 @@
  <form id="f" action="" name="form1">
     <p>用户名：<input type="text" name="user" onBlur="checkUser(this.value)" /><span id="user"></span></p>
     <p>密码：<input type="password" name="pwd" onBlur="checkpwd(this.value)" id="quepwd" /><span id="pwd"></span></p>
-    <p>密码：<input type="password" name="rpwd" onBlur="checkRpwd(this.value)" /><span id="rpwd"></span></p>
+    <p>确认密码：<input type="password" name="rpwd" onBlur="checkRpwd(this.value)" /><span id="rpwd"></span></p>
     <p>邮箱：<input type="text" name="email" onBlur="checkEmail(this.value)" /><span id="email"></span></p>
     <p><input type="submit" name="sub" value="提交" /></p>
 </form>
